@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+:root
+{
+    --main-color:#4fa74f;
+    --light-color:#f0f3f2;
+    --shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+    --font-family:'Encode Sans Expanded', sans-serif;
+    --rating-color:#ffc908;
+}
+
+body{
+    font-family: var(--font-family) !important;
+}
+.rating-color
+{
+    color: var(--rating-color);
+}
+.cursor-pointer
+{
+    cursor: pointer;
+}
+a , a:hover{
+    color: black !important;
+    text-decoration: none !important;
+}
+.product:hover
+{
+    box-shadow: var(--shadow);
+    border: solid 1px var(--main-color);
+}
+.product .btn 
+{
+    transition: transform 1s , opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+.product:hover .btn 
+{
+    opacity: 1;
+    transform: translateY(0%);
+
+}
+.font-sm
+{
+    font-size: 14px;
+}
+.font-l
+{
+    font-size: 16px;
+}
+.text-main
+{
+    color: var(--main-color);
+}
+.bg-main
+{
+    background-color: var(--main-color) !important;
+}
+
+.btnreg{
+    width: 110px;
+    height: 40px;
+    font-size:14px !important;
+    
+    
+}
+.btnreg-reg{
+width: 130px !important;
+font-size: 14px !important;
+}
+
+
+.count{
+    background-color:var(--main-color) !important;
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(45px,-10px)
+    
+
+}
+.bg-main-light 
+{
+    background-color: var(--light-color) !important;
+}
+
+
+.spin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 60px;
+}
+
+.fs12{
+    font-size: 12px;
+}
+
+.fw-5{
+    font-size: 18px ;
+    font-weight: 900  ;
+    border: 0 ;
+    text-decoration: none ;
+    color: black;
+    margin-bottom: 40px;
+}
+.fw-5:hover{
+color: var(--main-color) ;
+transition: 0.5s ;
+}
+
+.trans{
+    
+    color:#198754 !important;
+    border:solid 1px #198754 !important ;
+}
+
+.trans:hover{
+    background-color: #198754 !important;
+    color: white !important;
+}
+
+.w-90{
+    width: 90%;
+}
+.bg-main-btn{
+    background-color: #22db14 !important;
+}
+
+.fw-sm{
+    font-size: 14px ;
+}
+
+.fw-smp{
+    font-size: 12px ;
+}
