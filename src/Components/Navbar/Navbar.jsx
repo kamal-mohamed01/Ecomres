@@ -3,11 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import logo from "../../assets/images/freshcart-logo.svg"
 import { useContext } from 'react'
 import { UserContext } from '../../Context/UserContext'
-
+import { cartContext } from '../../Context/CartContext'
 
 
 
 export default function Navbar() {
+  const {cartCount} = useContext(cartContext)
 
   let {userToken,setUserToken} = useContext(UserContext)
   let navigate = useNavigate()
@@ -37,6 +38,12 @@ export default function Navbar() {
         </li>
 
         <li className="nav-item">
+          <Link className="nav-link" to="/cart">Cart</Link>
+        </li>
+
+
+
+        <li className="nav-item">
           <Link className="nav-link" to="/products">Products</Link>
         </li>
 
@@ -44,9 +51,6 @@ export default function Navbar() {
           <Link className="nav-link" to="/categories">Categories</Link>
         </li>
 
-        <li className="nav-item">
-          <Link className="nav-link" to="/cart">Cart</Link>
-        </li>
 
         <li className="nav-item">
           <Link className="nav-link" to="/brands">Brands</Link>
@@ -63,7 +67,12 @@ export default function Navbar() {
         {userToken !==null?<>
 
         <div className="nav-item d-flex align-items-center">
-          <span className='count rounded-2'>0</span>
+          <span className='count rounded-2'>
+            
+            
+            {cartCount}
+            
+            </span>
 
           <li ><Link to="/cart">
             <i className=' fa-xl text-dark  mx-2 fa-solid fa-cart-shopping'>    

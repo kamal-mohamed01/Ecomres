@@ -41,6 +41,8 @@ a , a:hover{
     transform: translateY(0%);
 
 }
+
+
 .font-sm
 {
     font-size: 14px;
@@ -85,11 +87,27 @@ font-size: 14px !important;
     
 
 }
+.network{
+    background-color: #f0f3f2;
+    position: fixed;
+    left: 30;
+    bottom: 30;
+    z-index: 9999;
+    padding: 20px;
+    box-shadow: var(--shadow);
+
+}
+
 .bg-main-light 
 {
     background-color: var(--light-color) !important;
 }
-
+.btn-brdr{
+    border: 2px solid #22db14 !important;
+}
+.text-maing{
+    color: #22db14;
+}
 
 .spin{
     display: flex;
@@ -146,4 +164,9 @@ transition: 0.5s ;
 
 .fw-smp{
     font-size: 12px ;
+}
+.dsddd{
+    width: 200px;
+    height: 200px;
+    background-color: red;
 }

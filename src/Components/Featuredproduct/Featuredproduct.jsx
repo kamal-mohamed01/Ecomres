@@ -3,14 +3,20 @@ import { useContext } from 'react';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import { cartContext } from '../../Context/CartContext';
+import toast, { Toaster } from 'react-hot-toast';
+import { Oval } from 'react-loader-spinner'
 
 export default function Featuredproduct() {
-  let {addToCart} = useContext(cartContext)
+  let {addToCart ,setCartCount} = useContext(cartContext)
 
   async function addProduct(productId) 
   {
-    let res = await addToCart(productId)
-    console.log(res);
+    let {data} = await addToCart(productId)
+    console.log(data);
+    if (data.status==="success") {
+      setCartCount(data.numOfCartItems)
+      toast('✔ Your Product Add To Card 🛺')
+    }
   }
   function getFeaturedproduct () {
     return axios.get(`https://ecommerce.routemisr.com/api/v1/products`)
@@ -28,9 +34,23 @@ export default function Featuredproduct() {
   return <>
 
   {isLoading?<div className='spin'>
-<i className='fas fa-spinner fa-spin'></i>
+<Oval
+  height={80}
+  width={80}
+  color="#4fa94d"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+  ariaLabel='oval-loading'
+  secondaryColor="#4fa94d"
+  strokeWidth={2}
+  strokeWidthSecondary={2}
+
+/>
 </div>:   <div className=' container py-2'>
+<Toaster/>
     <div className="row g-5">
+      
       {data?.data.data.map((item)=>   
         <div key={item.id} className="col-md-3">
         <div className='product cursor-pointer py-3 px-2'>
@@ -75,18 +95,3 @@ export default function Featuredproduct() {
 
 
 
-
-  // const [prouduct, setProuduct] = useState([])
-  // const [isLoading, setIsLoading] = useState(false)
-  
-  
-  
-  // async function getFeaturedproduct() {
-  //   setIsLoading(true)
-  //   let {data} = await axios.get(`https://ecommerce.routemisr.com/api/v1/products`)
-  //   setProuduct(data.data)
-  //   setIsLoading(false)
-  // }
-  // useEffect(()=>{
-  //   getFeaturedproduct()
-  // }, [])
