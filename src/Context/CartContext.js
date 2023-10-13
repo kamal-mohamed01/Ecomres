@@ -27,7 +27,7 @@ export default function CartContextProvider(props) {
     async function getCartN() {
         let {data} =await getCartProductN()
         setCartCount(data.numOfCartItems);
-        console.log(data.numOfCartItems);
+        // console.log(data.numOfCartItems);
         }
         useEffect(()=>{
             getCartN();

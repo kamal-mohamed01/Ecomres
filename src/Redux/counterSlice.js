@@ -1,7 +1,12 @@
+
+
+
 import { createSlice } from "@reduxjs/toolkit";
-let initialState = {counter:0 ,userName:''}
+
+
+let initialState = {product:[] , loading:false, isError:null}
 let counterSlice = createSlice({
-    name:'counterSlice',
+    name:'productSlice',
     initialState,
     reducers:{
         increase:(state)=>{
